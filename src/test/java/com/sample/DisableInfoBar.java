@@ -10,6 +10,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class DisableInfoBar {
 	public static void main(String[] args) {
+		//close info bar in chrome browser
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--start-maximized");
