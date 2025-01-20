@@ -15,12 +15,23 @@ public class DBTest {
 			System.out.println("Connected");
 			
 			Statement statement = con.createStatement();
-			String query1 = "select Language as lang from world.countrylanguage;";
-			ResultSet rs = statement.executeQuery(query1);	
-			while(rs.next()) {
-				System.out.println(rs.getString("lang"));
-			}
+			String query1 = "select * from  hari.login_credential;";
+			//String query1 = "insert into hari.login_credential (name, username, password) values('jagadish', 'jaga2', 'j@2154');";
+		
+			ResultSet rs = statement.executeQuery(query1);
 			
+			
+			//statement.execute(query1);
+			
+	
+			
+			
+			while(rs.next()) { 
+				System.out.println(rs.getString("name"));
+				System.out.println(rs.getString("id"));
+				System.out.println(rs.getString("username"));
+				}
+			 		
 		} catch (ClassNotFoundException e) {
 			
 			e.printStackTrace();

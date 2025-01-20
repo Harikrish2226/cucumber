@@ -38,4 +38,17 @@ public static ResultSet queryRead(String query)  {
 	return rs;	
 }
 
+//update -> update and insert
+		public static void update_DBdata(String query) {
+			
+			try {
+				Statement statement = get_Connection().createStatement();
+				statement.execute(query);
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+
+		}
 }

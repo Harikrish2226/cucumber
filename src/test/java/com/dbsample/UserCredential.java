@@ -11,17 +11,20 @@ public class UserCredential extends DB_Reuse {
 	public static WebDriver driver = null;
 
 	public static void main(String[] args) throws SQLException {
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.get("https://adactinhotelapp.com/");
+
 		ResultSet rs = queryRead(Constant.loginDetails);
 		while (rs.next()) {
-			if ("yuvaraj".equalsIgnoreCase(rs.getString("name"))) {
-				driver.findElement(By.id("username")).sendKeys(rs.getString("username"));
-				driver.findElement(By.id("password")).sendKeys(rs.getString("password"));
-				driver.findElement(By.id("login")).click();
-				
-			}
+
+			driver = new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://adactinhotelapp.com/");
+
+			// if ("yuvaraj".equalsIgnoreCase(rs.getString("name"))) {
+			driver.findElement(By.id("username")).sendKeys(rs.getString("username"));
+			driver.findElement(By.id("password")).sendKeys(rs.getString("password"));
+			driver.findElement(By.id("login")).click();
+
+			// }
 		}
 
 	}
